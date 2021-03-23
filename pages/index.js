@@ -1,6 +1,3 @@
-import { useEffect } from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
 import { gql, useQuery } from "@apollo/client";
 import PetCard from "../components/Cards/PetCard/PetCard";
 
@@ -38,7 +35,7 @@ const Index = () => {
 
   if (data) {
     return (
-      <div>
+      <div className="grid wrapper">
         {data.getPets.map((pet) => (
           <PetCard pet={pet} key={pet.id}></PetCard>
         ))}
